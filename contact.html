@@ -2,80 +2,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Character encoding -->
     <meta charset="UTF-8">
-
-    <!-- Responsive page configuration -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | StudentHub</title>
 
-    <!-- Browser tab title -->
-    <title>Contact Us</title>
-
-    <!-- Page styling -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f4f8;
+        * {
             margin: 0;
-            padding: 40px;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f8fc;
+            color: #172554;
+        }
+
+        header {
+            background: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,.05);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: #123b72;
+        }
+
+        .logo span {
+            color: #0ea5a4;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #0ea5a4;
+        }
+
+        .page-title {
+            background: linear-gradient(120deg, #102f59, #155b82);
+            text-align: center;
+            padding: 65px 20px;
+            color: white;
+        }
+
+        .page-title h1 {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .page-title p {
+            color: #dbeafe;
         }
 
         .container {
-            max-width: 600px;
-            margin: auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-        }
-
-        h1 {
-            color: darkblue;
-            text-align: center;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 1.6;
+            max-width: 1100px;
+            margin: 55px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 30px;
         }
 
         .contact-info {
-            background-color: #e8f0fe;
-            padding: 15px;
+            background: #123b72;
+            color: white;
+            padding: 35px;
+            border-radius: 16px;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 15px;
+        }
+
+        .contact-info > p {
+            color: #dbeafe;
+            margin-bottom: 35px;
+        }
+
+        .info-item {
+            margin-bottom: 28px;
+        }
+
+        .info-item h3 {
+            color: #55e0d0;
+            margin-bottom: 7px;
+            font-size: 16px;
+        }
+
+        .info-item p {
+            color: #e2e8f0;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 5px 25px rgba(15,23,42,.06);
+        }
+
+        .contact-form h2 {
+            margin-bottom: 8px;
+            color: #123b72;
+        }
+
+        .contact-form > p {
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #dbe3ed;
             border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #0ea5a4;
+            box-shadow: 0 0 0 3px rgba(14,165,164,.1);
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        button {
+            background: #0ea5a4;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #0d9488;
+        }
+
+        footer {
+            background: #0b1f3a;
+            color: #cbd5e1;
+            padding: 25px;
+            text-align: center;
+        }
+
+        @media(max-width: 750px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h1 {
+                font-size: 30px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+<header>
+    <div class="logo">Student<span>Hub.</span></div>
 
-        <!-- Main heading -->
-        <h1>Contact Us</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#features">Features</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
 
-        <p>Welcome to our DevOps project.</p>
+<section class="page-title">
+    <h1>Contact Us</h1>
+    <p>We are here to help. Get in touch with the StudentHub team.</p>
+</section>
 
-        <!-- Contact details -->
-        <div class="contact-info">
-            <p><strong>Email:</strong> maclaimi20@gmail.com</p>
-            <p><strong>Location:</strong> Rwanda Polytechnic</p>
-            <p><strong>Project:</strong> DevOps Application</p>
-        </div>
+<main class="container">
 
-    
-        <h2>Our Services</h2>
+    <section class="contact-info">
+        <h2>Get In Touch</h2>
 
         <p>
-            We develop and manage applications using
-            Git, GitHub, Jira, Docker and Kubernetes.
+            Have a question or need assistance?
+            Contact us using the information below.
         </p>
 
-        <p>Thank you for visiting our contact page.</p>
+        <div class="info-item">
+            <h3>✉ Email Address</h3>
+            <p>support@studenthub.com</p>
+        </div>
 
-        <!-- Link back to home page -->
-        <a href="hello.html">Back to Home</a>
+        <div class="info-item">
+            <h3>📍 Location</h3>
+            <p>Kigali, Rwanda</p>
+        </div>
 
-    </div>
+        <div class="info-item">
+            <h3>📞 Phone Number</h3>
+            <p>+250 788 000 000</p>
+        </div>
+
+        <div class="info-item">
+            <h3>🕒 Working Hours</h3>
+            <p>Monday - Friday</p>
+            <p>8:00 AM - 5:00 PM</p>
+        </div>
+    </section>
+
+    <section class="contact-form">
+        <h2>Send Us a Message</h2>
+        <p>Complete the form below to contact our team.</p>
+
+        <form action="mailto:support@studenthub.com"
+              method="post" enctype="text/plain">
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="Full Name"
+                       placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="Email"
+                       placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="Subject"
+                       placeholder="Enter message subject" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="Message"
+                          placeholder="Write your message here..."
+                          required></textarea>
+            </div>
+
+            <button type="submit">Send Message →</button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 StudentHub. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
