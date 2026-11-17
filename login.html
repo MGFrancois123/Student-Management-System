@@ -4,23 +4,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Login</title>
+    <title>Login | StudentHub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            background: #f5f8fc;
+        }
+
+        .left-panel {
+            width: 50%;
+            background: linear-gradient(145deg, #102f59, #155b82);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            color: white;
+        }
+
+        .left-content {
+            max-width: 480px;
+        }
+
+        .brand {
+            font-size: 27px;
+            font-weight: 800;
+            margin-bottom: 55px;
+        }
+
+        .brand span {
+            color: #55e0d0;
+        }
+
+        .left-content h1 {
+            font-size: 43px;
+            line-height: 1.2;
+            margin-bottom: 22px;
+        }
+
+        .left-content p {
+            color: #dbeafe;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .welcome-icon {
+            font-size: 75px;
+            margin-top: 35px;
+        }
+
+        .right-panel {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 430px;
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 12px 35px rgba(15,23,42,.07);
+        }
+
+        .login-card h2 {
+            font-size: 30px;
+            color: #123b72;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 9px;
+            color: #334155;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #dbe3ed;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #0ea5a4;
+            box-shadow: 0 0 0 3px rgba(14,165,164,.1);
+        }
+
+        .password-options {
+            text-align: right;
+            margin-top: -10px;
+            margin-bottom: 23px;
+        }
+
+        .password-options a {
+            text-decoration: none;
+            color: #0d9488;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #0ea5a4;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0d9488;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .register-link a {
+            color: #0d9488;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .back-home {
+            text-align: center;
+            margin-top: 22px;
+        }
+
+        .back-home a {
+            text-decoration: none;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        @media(max-width: 800px) {
+            .left-panel {
+                display: none;
+            }
+
+            .right-panel {
+                width: 100%;
+            }
+        }
+
+        @media(max-width: 480px) {
+            .login-card {
+                padding: 28px 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Student Login</h1>
 
-    <form action="#" method="post">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+<section class="left-panel">
 
-        <br><br>
+    <div class="left-content">
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <div class="brand">
+            Student<span>Hub.</span>
+        </div>
 
-        <br><br>
+        <h1>
+            Welcome Back to Your Student Portal
+        </h1>
 
-        <button type="submit">Login</button>
-    </form>
+        <p>
+            Access your StudentHub account and stay connected
+            with your student information. Manage your academic
+            journey through one simple platform.
+        </p>
+
+        <div class="welcome-icon">🎓</div>
+
+    </div>
+
+</section>
+
+<section class="right-panel">
+
+    <div class="login-card">
+
+        <h2>Welcome Back!</h2>
+
+        <p class="subtitle">
+            Please enter your account details to continue.
+        </p>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+            </div>
+
+            <div class="password-options">
+                <a href="#" onclick="alert('Password recovery is not connected yet.'); return false;">
+                    Forgot Password?
+                </a>
+            </div>
+
+            <button type="submit">Login to Account →</button>
+
+        </form>
+
+        <div class="register-link">
+            Don't have an account?
+            <a href="registration.html">Create Account</a>
+        </div>
+
+        <div class="back-home">
+            <a href="index.html">← Back to Home</a>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        alert("Login interface validated! Connect a backend to authenticate users.");
+    });
+</script>
+
 </body>
 </html>
