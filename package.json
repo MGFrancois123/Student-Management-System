@@ -1,0 +1,28 @@
+
+{
+  "name": "student-management",
+  "version": "1.0.0",
+  "description": "Student Management System DevOps testing project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "test:unit": "jest --runInBand tests/unit.test.js",
+    "test:integration": "jest --runInBand tests/integration.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MGFrancois123/Student-Management-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MGFrancois123/Student-Management-System/issues"
+  },
+  "homepage": "https://github.com/MGFrancois123/Student-Management-System#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "jest": "^30.0.0"
+  }
+}
