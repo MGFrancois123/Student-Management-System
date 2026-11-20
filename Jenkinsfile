@@ -14,11 +14,23 @@ pipeline {
                 echo 'Docker image build completed!'
             }
         }
+
+        stage('Deploy') {
+            steps {
+                echo 'Starting DevOps application deployment...'
+
+                bat 'docker rm -f devops-app 2>NUL'
+
+                bat 'docker run -d --restart unless-stopped --name devops-app -p 8085:80 devops-app:1.0'
+
+                echo 'Docker container deployed successfully!'
+            }
+        }
     }
 
     post {
         success {
-            echo 'SUCCESS: DevOps application built successfully.'
+            echo 'SUCCESS: Build and deployment completed successfully.'
         }
 
         failure {
