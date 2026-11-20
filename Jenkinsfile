@@ -3,6 +3,38 @@ pipeline {
     agent any
 
     stages {
+        stage('Install Dependencies') {
+            steps {
+                echo 'Installing project dependencies...'
+
+                bat 'node --version'
+                bat 'npm.cmd --version'
+                bat 'npm.cmd ci'
+
+                echo 'Dependencies installed successfully!'
+            }
+        }
+
+        stage('Unit Testing') {
+            steps {
+                echo 'Running Unit Tests...'
+
+                bat 'npm.cmd run test:unit'
+
+                echo 'Unit Tests completed successfully!'
+            }
+        }
+
+        stage('Integration Testing') {
+            steps {
+                echo 'Running Integration Tests...'
+
+                bat 'npm.cmd run test:integration'
+
+                echo 'Integration Tests completed successfully!'
+            }
+        }
+
         stage('Build') {
             steps {
                 echo 'Starting DevOps application build...'
@@ -30,7 +62,7 @@ pipeline {
 
     post {
         success {
-            echo 'SUCCESS: Build and deployment completed successfully.'
+            echo 'SUCCESS: Tests, build and deployment completed successfully.'
         }
 
         failure {
