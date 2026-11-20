@@ -7,8 +7,6 @@ pipeline {
             steps {
                 echo 'Installing project dependencies...'
 
-                bat 'node --version'
-                bat 'npm.cmd --version'
                 bat 'npm.cmd ci'
 
                 echo 'Dependencies installed successfully!'
@@ -17,21 +15,33 @@ pipeline {
 
         stage('Unit Testing') {
             steps {
-                echo 'Running Unit Tests...'
+                echo 'Running unit tests...'
 
                 bat 'npm.cmd run test:unit'
 
-                echo 'Unit Tests completed successfully!'
+                echo 'Unit tests completed successfully!'
             }
         }
 
         stage('Integration Testing') {
             steps {
-                echo 'Running Integration Tests...'
+                echo 'Running integration tests...'
 
                 bat 'npm.cmd run test:integration'
 
-                echo 'Integration Tests completed successfully!'
+                echo 'Integration tests completed successfully!'
+            }
+        }
+
+        stage('SAST Security Scan') {
+            steps {
+                echo 'Scanning source code for security vulnerabilities...'
+
+                bat '''
+                    docker run --rm -v "%WORKSPACE%:/src" semgrep/semgrep semgrep scan --config p/security-audit --error /src
+                '''
+
+                echo 'SAST security scan completed successfully!'
             }
         }
 
@@ -58,19 +68,25 @@ pipeline {
                 echo 'Docker container deployed successfully!'
             }
         }
+
+        stage('Pipeline Summary') {
+            steps {
+                echo 'Unit tests, integration tests, SAST, build and deployment completed successfully!'
+            }
+        }
     }
 
     post {
         success {
-            echo 'SUCCESS: Tests, build and deployment completed successfully.'
+            echo 'SUCCESS: All tests and security scans passed!'
         }
 
         failure {
-            echo 'FAILURE: Check the Jenkins Console Output.'
+            echo 'FAILURE: Tests or security scanning detected a problem!'
         }
 
         always {
-            echo 'Jenkins pipeline execution finished.'
+            echo 'Jenkins pipeline execution completed.'
         }
     }
 }
