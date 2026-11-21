@@ -1,0 +1,21 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minikube-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: deployment-web
+  template:
+    metadata:
+      labels:
+        app: deployment-web
+    spec:
+      containers:
+        - name: deployment-container
+          image: deployment-web:1.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
