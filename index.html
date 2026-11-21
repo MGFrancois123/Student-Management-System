@@ -20,7 +20,6 @@
             line-height: 1.6;
         }
 
-        /* NAVIGATION */
         header {
             background: #ffffff;
             padding: 18px 7%;
@@ -71,7 +70,6 @@
             background: #0ea5a4;
         }
 
-        /* HERO SECTION */
         .hero {
             padding: 85px 7%;
             background: linear-gradient(120deg, #102f59, #155b82);
@@ -150,7 +148,6 @@
             color: #123b72;
         }
 
-        /* HERO CARD */
         .hero-card {
             background: white;
             color: #172554;
@@ -188,7 +185,6 @@
             color: #64748b;
         }
 
-        /* GENERAL SECTION */
         .section {
             padding: 75px 7%;
         }
@@ -210,7 +206,6 @@
             margin: auto;
         }
 
-        /* FEATURES */
         .features {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -254,7 +249,6 @@
             font-size: 14px;
         }
 
-        /* ABOUT SECTION */
         .about {
             background: #eaf2fa;
             display: flex;
@@ -316,7 +310,49 @@
             color: #dbeafe;
         }
 
-        /* CTA */
+        .deployment {
+            padding: 65px 7%;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .deployment h2 {
+            color: #123b72;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .deployment p {
+            color: #64748b;
+            max-width: 750px;
+            margin: 0 auto 25px;
+        }
+
+        .deployment-status {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: 700;
+        }
+
+        .deployment-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .deployment-details span {
+            background: #f1f5f9;
+            color: #123b72;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
         .cta {
             text-align: center;
             padding: 65px 7%;
@@ -334,7 +370,6 @@
             margin-bottom: 25px;
         }
 
-        /* FOOTER */
         footer {
             background: #0b1f3a;
             color: #cbd5e1;
@@ -367,7 +402,6 @@
             margin-left: 8px;
         }
 
-        /* RESPONSIVE DESIGN */
         @media (max-width: 900px) {
             .hero {
                 flex-direction: column;
@@ -409,7 +443,8 @@
 
             .section-heading h2,
             .about-content h2,
-            .cta h2 {
+            .cta h2,
+            .deployment h2 {
                 font-size: 26px;
             }
 
@@ -431,6 +466,7 @@
             <a href="index.html">Home</a>
             <a href="#features">Features</a>
             <a href="#about">About</a>
+            <a href="#deployment">Deployment</a>
             <a href="contact.html">Contact</a>
             <a href="login.html" class="nav-btn">Login</a>
         </nav>
@@ -605,6 +641,30 @@
 
     </section>
 
+    <!-- KUBERNETES DEPLOYMENT SECTION -->
+    <section class="deployment" id="deployment">
+        <h2>Kubernetes Deployment</h2>
+
+        <p>
+            StudentHub is deployed as a containerized web application
+            using Docker, Kubernetes, and Minikube.
+            Kubernetes manages the application Pods and exposes the
+            website through a NodePort Service.
+        </p>
+
+        <div class="deployment-status">
+            ✓ Application Deployment - Version 2.0
+        </div>
+
+        <div class="deployment-details">
+            <span>Docker Container</span>
+            <span>Kubernetes</span>
+            <span>Minikube</span>
+            <span>2 Replicas</span>
+            <span>NodePort: 30080</span>
+        </div>
+    </section>
+
     <!-- CALL TO ACTION -->
     <section class="cta">
         <h2>Ready to Get Started?</h2>
@@ -624,7 +684,7 @@
         <p>
             © 2026 <strong>StudentHub</strong>.
             Student Management System.
-            <span class="version">Version 1.1.0</span>
+            <span class="version">Version 2.0</span>
         </p>
 
         <div>
